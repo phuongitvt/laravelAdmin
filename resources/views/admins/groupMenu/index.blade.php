@@ -6,11 +6,11 @@
             <div class="card">
                 <div class="card-header font-weight-bold row">
                     <div class="col-md-6">
-                        Members
+                        Groups
                     </div>
                     <div class="col-md-6">
                         <a href="#" class="pull-right">
-                            <button type="button" class="btn btn-primary rounded">Create Member</button>
+                            <button type="button" class="btn btn-primary rounded">Create Group</button>
                         </a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <tbody>
                         @foreach ($groups as $group)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$group->id}}</th>
                                 <td>{{$group->name}}</td>
                                 <td>{{$group->description}}</td>
                                 <td>{{$group->fix}}</td>

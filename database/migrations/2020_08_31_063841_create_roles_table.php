@@ -13,11 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->string("name",200);
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('roles')){
+            Schema::create('roles', function (Blueprint $table) {
+                $table->id();
+                $table->string("name",200);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

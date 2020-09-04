@@ -16,6 +16,11 @@
                 </div>
 
                 <div class="card-body">
+                    @if(Session::get('status'))
+                        <div class="alert alert-success">
+                            {{Session::get('status')}}
+                        </div>
+                    @endif
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -30,20 +35,31 @@
                         <tbody>
                         @foreach ($menus as $menu)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$menu->id}}</th>
                                 <td>{{$menu->name}}</td>
                                 <td>{{$menu->group}}</td>
                                 <td>{{$menu->description}}</td>
                                 <td>{{$menu->created_at}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary rounded">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </button>
+                                    <a href="{{route('menu.edit',['id'=>$menu->id])}}" class="d-inline-block">
+                                        <button type="button" class="btn btn-primary rounded">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                    <a href="{{route('menu.delete',['id'=>$menu->id])}}"
+                                       onclick="return confirm('Are you sure?')" class="d-inline-block">
+                                        <button type="button" class="btn btn-danger rounded">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="pull-right">
+                        {{$menus->links()}}
+                    </div>
                 </div>
             </div>
         </div>

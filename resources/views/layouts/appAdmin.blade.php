@@ -54,36 +54,14 @@
                 <li class="active">
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown show">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Admin Area</a>
-                    <ul class="sub-menu children dropdown-menu show">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="{{route("member.index")}}">Member</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="{{route("role.index")}}">Roles</a></li>
-                        <li><i class="fa fa-bars"></i><a href="{{route("permission.index")}}">Permission</a></li>
-                        <li><i class="fa fa-share-square-o"></i><a href="{{route("menu.index")}}">Menu</a></li>
-                        <li><i class="fa fa-id-card-o"></i><a href="{{route("group_menu.index")}}">Group</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                        <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                    </ul>
-                </li>
+                <h3 class="menu-title">Admin Area</h3><!-- /.menu-title -->
+                <li><a href="{{route("user.index")}}"><i class="menu-icon fa fa-puzzle-piece"></i>User</a></li>
+                <li><a href="{{route("role.index")}}"><i class="menu-icon fa fa-id-badge"></i>Roles</a></li>
+                <li><a href="{{route("slug.index")}}"><i class="menu-icon fa fa-bars"></i>Slug</a></li>
+                <li><a href="{{route("menu.index")}}"><i class="menu-icon fa fa-share-square-o"></i>Menu</a></li>
+                <li><a href="{{route("group_menu.index")}}"><i class="menu-icon fa fa-id-card-o"></i>Group</a></li>
 
-                <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                <h3 class="menu-title">Controls</h3><!-- /.menu-title -->
 
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -288,9 +266,11 @@
 <!-- Right Panel -->
 
 <script src="{{asset("assets/js/vendor/jquery-2.1.4.min.js")}}"></script>
-<script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.j")}}s"></script>
+<script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js")}}"></script>
 <script src="{{asset("assets/js/plugins.js")}}"></script>
 <script src="{{asset("assets/js/main.js")}}"></script>
+<script src="{{asset("js/jquery.min.js")}}"></script>
+@stack('scripts')
 
 </body>
 </html>

@@ -6,11 +6,11 @@
             <div class="card">
                 <div class="card-header font-weight-bold row">
                     <div class="col-md-6">
-                        Members
+                        Users
                     </div>
                     <div class="col-md-6">
-                        <a href="#" class="pull-right">
-                            <button type="button" class="btn btn-primary rounded">Create Member</button>
+                        <a href="{{route('user.create')}}" class="pull-right">
+                            <button type="button" class="btn btn-primary rounded">Create User</button>
                         </a>
                     </div>
                 </div>
@@ -28,17 +28,24 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($members as $member)
+                        @foreach ($users as $user)
                             <tr>
                                 <th scope="row">1</th>
-                                <td>{{$member->user_name}}</td>
-                                <td>{{$member->email}}</td>
-                                <td>{{$member->created_at}}</td>
-                                <td>{{$member->updated_at}}</td>
+                                <td>{{$user->user_name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->created_at}}</td>
+                                <td>{{$user->updated_at}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary rounded">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </button>
+                                    <a href="{{route('user.edit',['id'=>$user->id])}}" class="d-inline-block">
+                                        <button type="button" class="btn btn-primary rounded">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                    <a href="{{route('user.control',['id'=>$user->id])}}" class="d-inline-block">
+                                        <button type="button" class="btn btn-primary rounded">
+                                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

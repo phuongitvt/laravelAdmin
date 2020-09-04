@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bold">
                         <div class="col-md-6 no-padding">
-                            Create Role
+                            Update Role Id {{$role->id}}
                         </div>
                         <div class="col-md-6 no-padding">
                             <a href="{{route("role.index")}}" class="pull-right text-primary">
@@ -25,17 +25,17 @@
                                 </ul>
                             </div>
                         @endif
-                        @isset($status)
-                            <div class="alert alert-danger">
-                                {{$status}}
-                            </div>
-                        @endisset
-                        <form action="{{route('role.createProcess')}}" method="post">
+                        @if(Session::get('status'))
+                                <div class="alert alert-success">
+                                    {{Session::get('status')}}
+                                </div>
+                        @endif
+                        <form action="{{route('role.update',["id"=>$role->id])}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
                                 <input name="name" type="text" class="form-control" aria-describedby="emailHelp"
-                                       placeholder="Enter name" value="{{ old('name') }}">
+                                       placeholder="Enter name" value="{{ old('name',optional($role)->name) }}">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

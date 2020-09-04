@@ -1,4 +1,5 @@
 @extends('layouts.appAdmin')
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -6,10 +7,10 @@
                 <div class="card">
                     <div class="card-header font-weight-bold">
                         <div class="col-md-6 no-padding">
-                            Create Role
+                            Create User
                         </div>
                         <div class="col-md-6 no-padding">
-                            <a href="{{route("role.index")}}" class="pull-right text-primary">
+                            <a href="{{route("user.index")}}" class="pull-right text-primary">
                                 Index
                             </a>
                         </div>
@@ -30,12 +31,27 @@
                                 {{$status}}
                             </div>
                         @endisset
-                        <form action="{{route('role.createProcess')}}" method="post">
+                        <form action="{{route('user.createProcess')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input name="name" type="text" class="form-control" aria-describedby="emailHelp"
-                                       placeholder="Enter name" value="{{ old('name') }}">
+                                <input name="user_name" type="text" class="form-control"
+                                       placeholder="Enter user name" required value="{{ old('user_name') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input name="email" type="email" class="form-control" required aria-describedby="emailHelp"
+                                       placeholder="Enter email" value="{{ old('email') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input name="password" type="password" required class="form-control"
+                                       placeholder="Enter pass">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input name="password_confirmation" type="password" required class="form-control"
+                                       placeholder="Enter pass">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

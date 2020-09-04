@@ -13,13 +13,17 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function (Blueprint $table) {
-            $table->id();
-            $table->string("name",200);
-            $table->string("slug",100);
-            $table->text("description")->nullable();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('permissions')) {
+            Schema::create('permissions', function (Blueprint $table) {
+                $table->id();
+                $table->string("name", 200);
+                $table->bigInteger("id_slug")->unsigned();
+                $table->text("description")->nullable();
+                $table->timestamps();
+
+                $table->foreign('id_slug')->references('id')->on('slugs')->cascadeOnDelete();
+            });
+        }
     }
 
     /**

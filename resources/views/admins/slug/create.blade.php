@@ -6,10 +6,10 @@
                 <div class="card">
                     <div class="card-header font-weight-bold">
                         <div class="col-md-6 no-padding">
-                            Create Role
+                            Create Permission
                         </div>
                         <div class="col-md-6 no-padding">
-                            <a href="{{route("role.index")}}" class="pull-right text-primary">
+                            <a href="{{route("slug.index")}}" class="pull-right text-primary">
                                 Index
                             </a>
                         </div>
@@ -30,7 +30,7 @@
                                 {{$status}}
                             </div>
                         @endisset
-                        <form action="{{route('role.createProcess')}}" method="post">
+                        <form action="{{route('slug.createProcess')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
