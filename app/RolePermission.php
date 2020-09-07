@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserVsMenu extends Model
+class RolePermission extends Model
 {
     //
-    protected $table="user_vs_menus";
+    protected $table = "role_permission";
 
     public static function getTableName()
     {

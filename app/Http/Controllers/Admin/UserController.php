@@ -9,6 +9,7 @@ use App\UserVsMenu;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -76,12 +77,38 @@ class UserController extends Controller
     {
         $user = User::with('menus')->find($id);
         $roles = Role::all();
-        $menus = Menu::all();
-        $menuNow = $user->menus;
-        if($menuNow){
-            $menuNow = $menuNow->pluck('name');
+        $menuNows = $user->menus;
+
+        $temp = $menuNows ? $menuNows->pluck("id") : [];
+        $menus = Menu::whereNotIn('id', $temp)->get();
+
+        return view("admins.user.control", ["user" => $user, "roles" => $roles, "menus" => $menus, "menuNows" => $menuNows]);
+    }
+
+    public function addMenu(Request $request, $id)
+    {
+       $list = $request->all();
+       if(!$list['list']){
+           return false;
+       }
+       $data = [];
+       foreach ($list['list'] as $k => $value){
+           $data[] = ['id_menu' => $value, 'id_user' => $id];
+       }
+       $table = UserVsMenu::getTableName();
+       DB::table($table)->insert($data);
+       return true;
+    }
+
+    public function removeMenu(Request $request, $id)
+    {
+        $list = $request->all();
+        if(!$list['list']){
+            return false;
         }
-        return view("admins.user.control", ["user" => $user, "roles" => $roles, "menus" => $menus]);
+        $table = UserVsMenu::getTableName();
+        DB::table($table)->whereIn('id_menu', $list['list'])->where('id_user',$id)->delete();
+        return true;
     }
 
     private function validator(Request $request, $id = null)

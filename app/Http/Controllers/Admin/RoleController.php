@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -49,6 +50,7 @@ class RoleController extends Controller
         return redirect()
             ->route("role.create");
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -61,11 +63,21 @@ class RoleController extends Controller
         return view("admins.role.edit", ["role" => $role]);
     }
 
+    public function control($id)
+    {
+        $role = Role::with('permissions')->find($id);
+        $permissionNows = $role->permissions;
+
+        $temp = $permissionNows ? $permissionNows->pluck("id") : [];
+        $permissions = Permission::whereNotIn('id', $temp)->get();
+        return view("admins.role.control", ["role" => $role, "permissionNows" => $permissionNows, "permissions" => $permissions]);
+    }
+
     public function update(Request $request, $id)
     {
         $menu = Role::find($id);
         $data = $request->all();
-        $this->validator($request,$id);
+        $this->validator($request, $id);
         $menu->name = $data['name'];
         $menu->save();
 

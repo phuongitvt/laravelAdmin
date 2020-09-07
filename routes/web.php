@@ -26,6 +26,8 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
     Route::get('user/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('user/update/{id}', 'UserController@update')->name('user.update');
     Route::get('user/control/{id}', 'UserController@control')->name('user.control');
+    Route::post('user/addMenu/{id}', 'UserController@addMenu')->name('user.addMenu');
+    Route::post('user/removeMenu/{id}', 'UserController@removeMenu')->name('user.removeMenu');
 
     //group
     Route::get('group_menu/index', 'GroupMenuController@index')->name('group_menu.index');
@@ -38,6 +40,9 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
     Route::get('role/delete/{id}', 'RoleController@delete')->name('role.delete');
     Route::get('role/edit/{id}', 'RoleController@edit')->name('role.edit');
     Route::post('role/update/{id}', 'RoleController@update')->name('role.update');
+    Route::get('role/control/{id}', 'RoleController@control')->name('role.control');
+    Route::post('role/addPermission/{id}', 'RoleController@addPermission')->name('role.addPermission');
+    Route::post('role/removePermission/{id}', 'RoleController@removePermission')->name('role.removePermission');
 
     //permission
     Route::get('permission/index', 'PermissionController@index')->name('permission.index');

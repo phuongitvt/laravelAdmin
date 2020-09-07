@@ -14,4 +14,8 @@ class Menu extends Model
     {
         return $this->belongsToMany("App\User","user_vs_menus", 'id_user', 'id_menu');
     }
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
 }

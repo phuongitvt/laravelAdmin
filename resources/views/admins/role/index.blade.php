@@ -48,6 +48,11 @@
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </button>
                                     </a>
+                                    <a href="{{route('role.control',['id'=>$role->id])}}" class="d-inline-block">
+                                        <button type="button" class="btn btn-primary rounded">
+                                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
