@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="810e9fe7-4864-4de2-b090-a884c57eda66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GroupMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/GroupMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupMenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupMenuController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlugController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlugController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/RolePermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/RolePermission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Slug.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Slug.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SlugPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/SlugPermission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/UserRole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UserVsMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/UserVsMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_31_063841_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_31_063841_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_31_063911_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_31_063911_create_permissions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/role/control.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/role/control.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/role/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/slug/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/slug/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/user/control.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/user/control.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/appAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/appAdmin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_011556_create_slug_permissions_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +138,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admins/role" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -214,6 +190,7 @@
       <workItem from="1599181787428" duration="25748000" />
       <workItem from="1599441389449" duration="27408000" />
       <workItem from="1599527734834" duration="5101000" />
+      <workItem from="1599537106200" duration="1394000" />
     </task>
     <servers />
   </component>
