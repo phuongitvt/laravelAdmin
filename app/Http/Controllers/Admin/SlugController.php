@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Slug;
-use App\Permission;
+use App\Models\Admin\Slug;
+use App\Models\Admin\Permission;
 
 class SlugController extends Controller
 {
@@ -15,10 +15,12 @@ class SlugController extends Controller
 
         return view('admins.slug.index', ['slugs' => $slugs]);
     }
+
     public function create()
     {
         return view("admins.slug.create");
     }
+
     public function createProcess(Request $request)
     {
         $data = $request->all();
@@ -27,11 +29,12 @@ class SlugController extends Controller
         $slug->name = $data['name'];
         if ($slug->save()) {
             return redirect()
-                ->route("slug.edit",['id'=>$slug->id])->with("status", "You has create Slug");
+                ->route("slug.edit", ['id' => $slug->id])->with("status", "You has create Slug");
         }
         return redirect()
             ->route("slug.create");
     }
+
     public function edit($id)
     {
         $slug = Slug::find($id);
@@ -42,7 +45,7 @@ class SlugController extends Controller
     {
         $menu = Slug::find($id);
         $data = $request->all();
-        $this->validator($request,$id);
+        $this->validator($request, $id);
         $menu->name = $data['name'];
         $menu->save();
 
@@ -53,22 +56,23 @@ class SlugController extends Controller
 
     public function addPermission(Request $request)
     {
-       $data = $request->all();
-       $permission = new Permission();
-       $permission->name = $data["name"];
-       $permission->id_slug = $data["id_slug"];
-       if($permission->save()){
-           return response()->json(['success' => true, 'id' => $permission->id]);
-       }
+        $data = $request->all();
+        $permission = new Permission();
+        $permission->name = $data["name"];
+        $permission->id_slug = $data["id_slug"];
+        $permission->full_name = $data['slug_name'] . "." . $data['name'];
+        if ($permission->save()) {
+            return response()->json(['success' => true, 'id' => $permission->id]);
+        }
         return response()->json(['success' => false]);
     }
 
     public function removePermission(Request $request)
     {
-       $data = $request->all();
-       if(Permission::destroy($data['id'])){
-           return response()->json(['success' => true]);
-       }
+        $data = $request->all();
+        if (Permission::destroy($data['id'])) {
+            return response()->json(['success' => true]);
+        }
         return response()->json(['success' => false]);
     }
 

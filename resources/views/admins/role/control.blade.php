@@ -41,24 +41,24 @@
                             <div class="form-group col-sm-5">
                                 <select multiple class="form-control" style="height: 300px" id="permissionNotShow">
                                     @foreach ($permissions as $permission)
-                                        <option value="{{$permission['id']}}">{{$permission['name']}}</option>
+                                        <option value="{{$permission['id']}}">{{$permission['full_name']}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-sm-2" style="margin: auto">
                                 <button type="button" class="btn btn-block btn-outline-info"
-                                        onclick="getPermission(this,'{{route("role.addPermission",["id"=>$role["id"]])}}')"
+                                        onclick="getPermission(this,'{{url("/role/addPermission/{$role["id"]}")}}')"
                                         style="margin: 5px">Add
                                 </button>
                                 <button type="button" class="btn btn-block btn-outline-danger" style="margin: 5px"
-                                        onclick="destroyPermission(this,'{{route("role.removePermission",["id"=>$role["id"]])}}')">
+                                        onclick="destroyPermission(this,'{{url("/role/removePermission/{$role["id"]}")}}')">
                                     Remove
                                 </button>
                             </div>
                             <div class="form-group col-sm-5">
                                 <select multiple class="form-control border-info" style="height: 300px" id="permissionShow">
-                                    @foreach ($permissionNows as $permissionNow)
-                                        <option value="{{$permissionNow['id']}}">{{$permissionNow['name']}}</option>
+                                    @foreach ($permissionNows as $item1)
+                                        <option value="{{$item1['id']}}">{{$item1['full_name']}}</option>
                                     @endforeach
                                 </select>
                             </div>

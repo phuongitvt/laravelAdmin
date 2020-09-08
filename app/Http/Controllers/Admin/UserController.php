@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Menu;
-use App\Role;
+use App\Models\Admin\Menu;
+use App\Models\Admin\Role;
 use App\User;
-use App\UserVsMenu;
+use App\Models\Admin\UserRole;
+use App\Models\Admin\UserVsMenu;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,8 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(15);
-
+        $users = User::with('role')->paginate(15);
         return view('admins.user.index', ['users' => $users]);
     }
 
@@ -75,14 +75,34 @@ class UserController extends Controller
 
     public function control($id)
     {
-        $user = User::with('menus')->find($id);
-        $roles = Role::all();
+        $user = User::with('menus')->with(['role','menus'])->find($id);
+        $role = Role::all();
         $menuNows = $user->menus;
+
+        $roleNow = $user->role;
 
         $temp = $menuNows ? $menuNows->pluck("id") : [];
         $menus = Menu::whereNotIn('id', $temp)->get();
 
-        return view("admins.user.control", ["user" => $user, "roles" => $roles, "menus" => $menus, "menuNows" => $menuNows]);
+        return view("admins.user.control", ["user" => $user, "roles" => $role,"roleNow" => $roleNow, "menus" => $menus, "menuNows" => $menuNows]);
+    }
+
+    public function updateControl(Request $request, $id)
+    {
+        $data = $request->all();
+        if(isset($data["role"])){
+            $UserRole = UserRole::firstWhere('id_user', $id);
+            if(!$UserRole){
+                $UserRole = new UserRole();
+                $UserRole->id_user = $id;
+            }
+            $UserRole->id_role = $data["role"];
+            $UserRole->save();
+        }
+
+        $request->session()->flash('status', 'Update success!');
+
+        return redirect()->route("user.control", ['id' => $id]);
     }
 
     public function addMenu(Request $request, $id)

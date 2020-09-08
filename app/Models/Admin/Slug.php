@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Slug extends Model
 
     public function permissions()
     {
-        return $this->hasMany('App\Permission','id_slug', 'id');
+        return $this->hasMany('App\Models\Admin\Permission','id_slug', 'id');
     }
 }

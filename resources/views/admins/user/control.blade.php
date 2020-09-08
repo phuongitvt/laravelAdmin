@@ -30,7 +30,7 @@
                             {{$status}}
                         </div>
                     @endisset
-                    <form action="{{route('user.update',['id'=>$user->id])}}" method="post">
+                    <form action="{{route('user.updateControl',['id'=>$user->id])}}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
@@ -40,9 +40,9 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Role</label>
-                            <select class="form-control" name="group">
+                            <select class="form-control" name="role">
                                 @foreach ($roles as $role)
-                                    <option value="{{$role['name']}}">{{$role['name']}}</option>
+                                    <option value="{{$role['id']}}" @if ($roleNow && $roleNow['id'] == $role['id']) selected @endif >{{$role['name']}}</option>
                                 @endforeach
                             </select>
                         </div>

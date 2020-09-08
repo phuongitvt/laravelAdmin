@@ -21,6 +21,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">UserName</th>
+                            <th scope="col">Role</th>
                             <th scope="col">Email</th>
                             <th scope="col">Created At</th>
                             <th scope="col">Updated At</th>
@@ -32,6 +33,12 @@
                             <tr>
                                 <th scope="row">1</th>
                                 <td>{{$user->user_name}}</td>
+                                <th scope="col">
+                                    @php
+                                    $temp = $user->role;
+                                    echo($temp?$temp->name:"");
+                                    @endphp
+                                </th>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->created_at}}</td>
                                 <td>{{$user->updated_at}}</td>

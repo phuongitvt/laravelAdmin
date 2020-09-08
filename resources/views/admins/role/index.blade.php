@@ -37,11 +37,6 @@
                                 <td>{{$role->name}}</td>
                                 <td>{{$role->created_at}}</td>
                                 <td>
-                                    <a href="{{route('role.edit',['id'=>$role->id])}}" class="d-inline-block">
-                                        <button type="button" class="btn btn-primary rounded">
-                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        </button>
-                                    </a>
                                     <a href="{{route('role.delete',['id'=>$role->id])}}"
                                        onclick="return confirm('Are you sure?')" class="d-inline-block">
                                         <button type="button" class="btn btn-danger rounded">

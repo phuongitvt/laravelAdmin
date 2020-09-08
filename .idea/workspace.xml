@@ -2,16 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="810e9fe7-4864-4de2-b090-a884c57eda66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admins/role/control.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GroupMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/GroupMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupMenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupMenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlugController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlugController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UserVsMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UserVsMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RolePermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/RolePermission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Slug.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Slug.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SlugPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/SlugPermission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/UserRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UserVsMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/UserVsMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_31_063841_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_31_063841_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_31_063911_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_31_063911_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admins/role/control.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/role/control.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admins/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admins/slug/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/slug/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admins/user/control.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/user/control.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admins/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/appAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/appAdmin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,16 +166,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admins/role" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\daugia\app\Models\Admin" />
+      <recent name="C:\xampp\htdocs\daugia\app\Models" />
+      <recent name="C:\xampp\htdocs\daugia\app\Http\Controllers\admins" />
+      <recent name="C:\xampp\htdocs\daugia\resources\views\admins" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\daugia\resources\views\admins\role" />
       <recent name="C:\xampp\htdocs\daugia\resources\views\admins\menu" />
       <recent name="C:\xampp\htdocs\daugia\resources\views\admins\user" />
       <recent name="C:\xampp\htdocs\daugia\resources\views\admins\slug" />
       <recent name="C:\xampp\htdocs\daugia\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\daugia\app\Http\Controllers\admins" />
-      <recent name="C:\xampp\htdocs\daugia\resources\views\admins" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +212,8 @@
       <workItem from="1598923013931" duration="10218000" />
       <workItem from="1599095592546" duration="25459000" />
       <workItem from="1599181787428" duration="25748000" />
-      <workItem from="1599441389449" duration="10696000" />
+      <workItem from="1599441389449" duration="27408000" />
+      <workItem from="1599527734834" duration="5101000" />
     </task>
     <servers />
   </component>
@@ -204,10 +225,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1599102103876" />
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599451274731">
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599460048998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1599451274731" />
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1599460048998" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1599210426765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,10 +241,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1598861361986" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1599441410996">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1599532313917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1599441410996" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1599532313917" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1599103831612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

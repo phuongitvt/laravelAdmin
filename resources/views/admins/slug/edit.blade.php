@@ -34,7 +34,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input name="name" type="text" class="form-control" aria-describedby="emailHelp"
+                                <input name="name" type="text" class="form-control" aria-describedby="emailHelp" disabled
                                        placeholder="Enter name" value="{{ old('name',$slug->name) }}">
                             </div>
                             <div class="input-group mb-3">
@@ -42,7 +42,7 @@
                                        placeholder="Permission name"
                                        aria-label="Permission name" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary"
+                                    <button class="btn btn-primary" data-slug="{{$slug->name}}"
                                             onclick="addPermission(this,'{{ $slug->id }}','{{route("slug.addPermission")}}')"
                                             type="button">Add
                                     </button>
@@ -72,6 +72,7 @@
         <script>
             function addPermission(e, id_slug, link) {
                 let value = $("#txtPermission").val();
+                let slug_name = $(e).data('slug')
                 if (value) {
                     const temp = $("label[value^='" + value + "']");
                     if (temp.length > 0) {
@@ -84,6 +85,7 @@
                         data: {
                             name: value,
                             id_slug: id_slug,
+                            slug_name: slug_name
                         },
                         dataType: 'json',
                         success: function (data) {

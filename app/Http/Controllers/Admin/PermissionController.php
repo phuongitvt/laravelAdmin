@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Permission;
+use App\Models\Admin\Permission;
 
 class PermissionController extends Controller
 {
@@ -44,6 +44,7 @@ class PermissionController extends Controller
         $this->validator($request);
         if (Permission::create([
             'name' => $data['name'],
+            'full_name' => $data['slug_name'].".".$data['name'],
             'slug' => $data['slug'],
             'description' => $data['description']
         ])) {

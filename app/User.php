@@ -42,12 +42,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+    public function role()
     {
-        return $this->hasOne('App\UserRole','id_user', 'id');
+        return $this->hasOneThrough("App\Models\Admin\Role","App\Models\Admin\UserRole", 'id_user', 'id','id','id_role');
     }
     public function menus()
     {
-        return $this->belongsToMany("App\Menu","user_vs_menus", 'id_user', 'id_menu');
+        return $this->belongsToMany("App\Models\Admin\Menu","user_vs_menus", 'id_user', 'id_menu');
+    }
+
+    public function permissions()
+    {
+        return $this->hasManyThrough('App\Models\Admin\RolePermission', 'App\Models\Admin\UserRole','id_user',"id_role","id","id_role");
     }
 }

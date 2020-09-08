@@ -34,6 +34,10 @@
 </head>
 <body>
 
+@php
+    $user = \Illuminate\Support\Facades\Auth::user();
+@endphp
+
 
 <!-- Left Panel -->
 
@@ -54,12 +58,13 @@
                 <li class="active">
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">Admin Area</h3><!-- /.menu-title -->
-                <li><a href="{{route("user.index")}}"><i class="menu-icon fa fa-puzzle-piece"></i>User</a></li>
-                <li><a href="{{route("role.index")}}"><i class="menu-icon fa fa-id-badge"></i>Roles</a></li>
-                <li><a href="{{route("slug.index")}}"><i class="menu-icon fa fa-bars"></i>Slug</a></li>
-                <li><a href="{{route("menu.index")}}"><i class="menu-icon fa fa-share-square-o"></i>Menu</a></li>
-                <li><a href="{{route("group_menu.index")}}"><i class="menu-icon fa fa-id-card-o"></i>Group</a></li>
+                @if(Gate::allows('admin'))
+                    <h3 class="menu-title">Admin Area</h3><!-- /.menu-title -->
+                    <li><a href="{{route("user.index")}}"><i class="menu-icon fa fa-puzzle-piece"></i>User</a></li>
+                    <li><a href="{{route("role.index")}}"><i class="menu-icon fa fa-id-badge"></i>Roles</a></li>
+                    <li><a href="{{route("slug.index")}}"><i class="menu-icon fa fa-bars"></i>Controller</a></li>
+                    <li><a href="{{route("menu.index")}}"><i class="menu-icon fa fa-share-square-o"></i>Menu</a></li>
+                @endif
 
                 <h3 class="menu-title">Controls</h3><!-- /.menu-title -->
 

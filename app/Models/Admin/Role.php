@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class Role extends Model
 
     public function permissions()
     {
-        return $this->belongsToMany("App\Menu","role_permission", 'id_role', 'id_permission');
+        return $this->belongsToMany("App\Models\Admin\Permission","role_permission", 'id_role', 'id_permission');
     }
 }

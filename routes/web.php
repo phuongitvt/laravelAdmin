@@ -26,6 +26,7 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
     Route::get('user/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('user/update/{id}', 'UserController@update')->name('user.update');
     Route::get('user/control/{id}', 'UserController@control')->name('user.control');
+    Route::post('user/updateControl/{id}', 'UserController@updateControl')->name('user.updateControl');
     Route::post('user/addMenu/{id}', 'UserController@addMenu')->name('user.addMenu');
     Route::post('user/removeMenu/{id}', 'UserController@removeMenu')->name('user.removeMenu');
 

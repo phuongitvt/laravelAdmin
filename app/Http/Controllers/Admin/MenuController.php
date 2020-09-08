@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\GroupMenu;
+use App\Models\Admin\GroupMenu;
 use App\User;
-use App\Menu;
+use  App\Models\Admin\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -19,6 +20,8 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::paginate(15);
+
+        $temp = Auth::user()->menus;
 
         return view('admins.menu.index', ['menus' => $menus]);
     }
