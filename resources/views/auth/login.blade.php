@@ -35,13 +35,23 @@
 
 <div class="sufee-login d-flex align-content-center flex-wrap">
     <div class="container">
+        <div class="language-select dropdown" id="language-select" style="color: black">
+            <form action="{{ route('switchLang') }}" class="form-lang" method="post">
+                <select name="locale" onchange='this.form.submit();'>
+                    <option value="en">@lang('label.lang.en')</option>
+                    <option value="vn" {{ Lang::locale() === 'vn' ? 'selected' : '' }}>@lang('label.lang.vn')</option>
+                    <option value="jp" {{ Lang::locale() === 'jp' ? 'selected' : '' }}>@lang('label.lang.jp')</option>
+                </select>
+                {{ csrf_field() }}
+            </form>
+        </div>
         <div class="login-content">
             <div class="login-form">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <label>User name</label>
-                        <input type="text" class="form-control" placeholder="User name" name="user_name"
+                        <label> @lang('label.user_name')</label>
+                        <input type="text" class="form-control" placeholder="@lang('label.user_name')" name="user_name"
                                value="{{ old('user_name') }}" required autocomplete="user_name" autofocus>
                         @error('user_name')
                         <span class="invalid-feedback" role="alert">
@@ -50,8 +60,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password"
+                        <label>@lang('label.pass')</label>
+                        <input type="password" class="form-control" placeholder="@lang('label.pass')" name="password"
                                required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -59,7 +69,7 @@
                                     </span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
+                    <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">@lang('label.login')</button>
                 </form>
             </div>
         </div>
